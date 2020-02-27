@@ -28,6 +28,8 @@ class AccountsController < ApplicationController
   end
 
   def destroy
-    
+    #get id from params
+    #destroy account with id
+    # render success json
   end
 end
