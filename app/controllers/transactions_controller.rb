@@ -9,6 +9,9 @@ class TransactionsController < ApplicationController
   end
 
   def create
+    transaction = Transaction.create text: params[:text], amount: params[:amount], account_id: params[:account_id]
+
+    render json: transaction  
   end
 
   def update

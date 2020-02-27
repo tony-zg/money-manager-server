@@ -17,12 +17,17 @@ class AccountsController < ApplicationController
   end
 
   def create
-
+    newAccount = Account.create name: params[:name], description: params[:description], user_id: current_user.id
+    render json: {
+                    success: true,
+                    data: newAccount
+                  }
   end
 
   def update
   end
 
   def destroy
+    
   end
 end
