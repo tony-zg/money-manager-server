@@ -10732,3 +10732,103 @@ Completed 200 OK in 14ms (Views: 1.8ms | ActiveRecord: 5.4ms)
   ↳ db/seeds.rb:22
   [1m[36mTransaction Load (0.3ms)[0m  [1m[34mSELECT "transactions".* FROM "transactions"[0m
   ↳ db/seeds.rb:23
+Started POST "/users" for ::1 at 2020-03-01 10:43:14 +1100
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Tony/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"tony@ga.co", "name"=>"Tony ", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Tony ", "email"=>"tony@ga.co"}}
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28
+  [1m[36mUser Exists (7.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tony@ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  [1m[35m (13.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:28
+Completed 422 Unprocessable Entity in 295ms (Views: 0.7ms | ActiveRecord: 49.2ms)
+
+
+Started POST "/users" for ::1 at 2020-03-01 10:52:12 +1100
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Tony/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"tony@ga.co", "name"=>"Tony ", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Tony ", "email"=>"tony@ga.co"}}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28
+  [1m[36mUser Create (10.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Tony "], ["email", "tony@ga.co"], ["password_digest", "$2a$12$h9444DL2DfUAlp7ZUf82J.TeEyZEjQqkLibWeX/NXBc/RhlkWE8eK"], ["created_at", "2020-02-29 23:52:12.869661"], ["updated_at", "2020-02-29 23:52:12.869661"]]
+  ↳ app/controllers/users_controller.rb:28
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:28
+Completed 200 OK in 430ms (Views: 0.6ms | ActiveRecord: 34.6ms)
+
+
+Started POST "/users" for ::1 at 2020-03-01 10:53:42 +1100
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Tony/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"tony@ga.co", "name"=>"Tony", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Tony", "email"=>"tony@ga.co"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28
+  [1m[36mUser Exists (14.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tony@ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  [1m[35m (3.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:28
+Completed 422 Unprocessable Entity in 358ms (Views: 0.4ms | ActiveRecord: 28.0ms)
+
+
+Started POST "/users" for ::1 at 2020-03-01 10:54:19 +1100
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"rose@ga.co", "name"=>"Rose", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Rose", "email"=>"rose@ga.co"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rose@ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Rose"], ["email", "rose@ga.co"], ["password_digest", "$2a$12$TEWzdvjrd9N0/g2XeljyYupy5FstZGh6LOEImnjOaxOmP.EZW/0IK"], ["created_at", "2020-02-29 23:54:20.076501"], ["updated_at", "2020-02-29 23:54:20.076501"]]
+  ↳ app/controllers/users_controller.rb:28
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:28
+Completed 200 OK in 313ms (Views: 0.9ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/api/user_token" for ::1 at 2020-03-01 11:10:04 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"2323", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"2323", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "2323"], ["LIMIT", 1]]
+  ↳ /Users/Tony/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 404 Not Found in 26ms (ActiveRecord: 4.8ms)
+
+
+Started POST "/api/user_token" for ::1 at 2020-03-01 11:10:07 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"2323", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"2323", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "2323"], ["LIMIT", 1]]
+  ↳ /Users/Tony/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started POST "/api/user_token" for ::1 at 2020-03-01 11:10:08 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"2323", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"2323", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "2323"], ["LIMIT", 1]]
+  ↳ /Users/Tony/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started POST "/api/user_token" for ::1 at 2020-03-01 11:10:10 +1100
+Processing by UserTokenController#create as HTML
+  Parameters: {"auth"=>{"email"=>"2323", "password"=>"[FILTERED]"}, "user_token"=>{"auth"=>{"email"=>"2323", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "2323"], ["LIMIT", 1]]
+  ↳ /Users/Tony/.rvm/gems/ruby-2.4.1/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2020-03-01 11:27:17 +1100
+Processing by UsersController#create as HTML
+  Parameters: {"email"=>"tony@ga.co", "name"=>"Tony", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"name"=>"Tony", "email"=>"tony@ga.co"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:28
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "tony@ga.co"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:28
+Completed 422 Unprocessable Entity in 265ms (Views: 0.3ms | ActiveRecord: 7.3ms)
+
+
